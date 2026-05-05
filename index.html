@@ -222,7 +222,15 @@
           <div>
             <label for="gradeSelect">الصف</label>
             <select id="gradeSelect" onchange="populateSubjects()">
-              <option value="">جاري تحميل الصفوف...</option>
+              <option value="">-- اختر الصف --</option>
+              <option value="5">الصف 5</option>
+              <option value="6">الصف 6</option>
+              <option value="7">الصف 7</option>
+              <option value="8">الصف 8</option>
+              <option value="9">الصف 9</option>
+              <option value="10">الصف 10</option>
+              <option value="11">الصف 11</option>
+              <option value="12">الصف 12</option>
             </select>
           </div>
           <div>
@@ -320,7 +328,10 @@
     const LESSON_SOURCE_URL = 'https://raw.githubusercontent.com/annwr2a2/oman-academy/main/index.html';
     const MAX_FILE_SIZE_MB = 20;
 
+    const STATIC_GRADES = ['5','6','7','8','9','10','11','12'];
+
     let lessonData = {};
+    let lessonDataReady = false;
     let currentLessons = [];
 
     const $ = id => document.getElementById(id);
@@ -348,13 +359,16 @@
     }
 
     async function loadLessonData(){
+      populateStaticGrades();
       try{
         const response = await fetch(LESSON_SOURCE_URL + '?v=' + Date.now(), {cache:'no-store'});
         if(!response.ok) throw new Error(`تعذر تحميل بيانات الدروس. كود الاستجابة: ${response.status}`);
         const html = await response.text();
         const objectText = extractObjectLiteral(html, 'lessonData');
         lessonData = Function(`return (${objectText});`)();
+        lessonDataReady = true;
         populateGrades();
+        if($('gradeSelect').value) populateSubjects();
       }catch(error){
         console.error(error);
         $('gradeSelect').innerHTML = '<option value="">تعذر تحميل الصفوف</option>';
@@ -403,15 +417,23 @@
       return slashCount % 2 === 1;
     }
 
+    function populateStaticGrades(){
+      $('gradeSelect').innerHTML = '<option value="">-- اختر الصف --</option>' + STATIC_GRADES.map(g => `<option value="${escapeHtml(g)}">الصف ${escapeHtml(g)}</option>`).join('');
+      $('lessonInfo').textContent = 'اختر الصف الآن، وسيتم تحميل المواد والدروس في الخلفية.';
+      $('lessonInfo').className = 'hint';
+    }
+
     function populateGrades(){
       const grades = Object.keys(lessonData || {}).sort((a,b) => Number(a) - Number(b));
       if(!grades.length){
-        $('gradeSelect').innerHTML = '<option value="">لا توجد صفوف</option>';
-        $('lessonInfo').textContent = 'تم الاتصال بالمصدر، لكن لم يتم العثور على صفوف داخل lessonData.';
+        populateStaticGrades();
+        $('lessonInfo').textContent = 'تم عرض الصفوف الأساسية، لكن لم يتم العثور على بيانات الدروس بعد.';
         $('lessonInfo').className = 'hint danger';
         return;
       }
+      const currentGrade = $('gradeSelect').value;
       $('gradeSelect').innerHTML = '<option value="">-- اختر الصف --</option>' + grades.map(g => `<option value="${escapeHtml(g)}">الصف ${escapeHtml(g)}</option>`).join('');
+      if(currentGrade && grades.includes(currentGrade)) $('gradeSelect').value = currentGrade;
       $('lessonInfo').textContent = `تم تحميل ${grades.length} صفوف بنجاح. اختر الصف من القائمة.`;
       $('lessonInfo').className = 'hint ok';
       updatePreview();
@@ -424,9 +446,23 @@
       $('lessonSearch').value = '';
       currentLessons = [];
 
-      if(!grade || !lessonData[grade]){
+      if(!grade){
         $('lessonInfo').textContent = 'اختر الصف أولًا، ثم اختر المادة والدرس.';
         $('lessonInfo').className = 'hint';
+        updatePreview();
+        return;
+      }
+
+      if(!lessonDataReady){
+        $('lessonInfo').textContent = `تم اختيار الصف ${grade}. جاري تحميل المواد والدروس...`;
+        $('lessonInfo').className = 'hint';
+        updatePreview();
+        return;
+      }
+
+      if(!lessonData[grade]){
+        $('lessonInfo').textContent = `لا توجد بيانات محفوظة للصف ${grade} في مصدر الدروس.`;
+        $('lessonInfo').className = 'hint danger';
         updatePreview();
         return;
       }
