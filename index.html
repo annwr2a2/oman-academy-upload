@@ -7,45 +7,211 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --primary:#1e40af;--primary-dark:#1e3a8a;--accent:#f59e0b;--bg:#f8fafc;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0;--green:#16a34a;--red:#dc2626;--orange-bg:#fff7ed;--blue-bg:#eff6ff;
+      --primary:#1e40af;
+      --primary-dark:#1e3a8a;
+      --accent:#f59e0b;
+      --bg:#f8fafc;
+      --card:#fff;
+      --text:#1e293b;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --green:#16a34a;
+      --red:#dc2626;
+      --orange-bg:#fff7ed;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;padding:18px;font-family:Tajawal,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .header{max-width:980px;margin:0 auto 20px;text-align:center}
-    .header h1{margin:0;color:var(--primary);font-size:2rem;font-weight:900}
-    .header p{margin:8px 0 0;color:var(--muted);line-height:1.8}
-    .credit{display:inline-block;margin-top:10px;background:#eef2ff;color:var(--primary);border:1px solid #c7d2fe;padding:8px 14px;border-radius:999px;font-weight:800;font-size:.9rem}
-    .wrap{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:18px}
-    .card{background:var(--card);border-radius:18px;box-shadow:0 4px 14px rgba(15,23,42,.08);padding:18px;margin-bottom:16px}
-    .card h2{margin:0 0 14px;color:var(--primary);font-size:1.12rem;font-weight:900}
-    label{display:block;margin:10px 0 5px;color:var(--muted);font-weight:800;font-size:.86rem}
-    input,select,textarea,button{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:.95rem;background:#fff;color:var(--text)}
-    textarea{min-height:86px;resize:vertical;line-height:1.7}
-    button{border:none;background:var(--primary);color:white;font-weight:900;cursor:pointer;transition:.2s;margin-top:12px}
-    button:hover{background:var(--primary-dark);transform:translateY(-1px)}
-    button:disabled{opacity:.55;cursor:not-allowed;transform:none}
-    .btn-secondary{background:#dbeafe;color:#1d4ed8}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .hint{background:var(--orange-bg);border-right:4px solid var(--accent);border-radius:12px;padding:11px;color:#9a3412;line-height:1.8;font-size:.88rem;margin-top:10px}
-    .ok{background:#f0fdf4;border-right-color:var(--green);color:#166534}
-    .danger{background:#fef2f2;border-right-color:var(--red);color:#991b1b}
-    .preview{background:#f8fafc;border:1px solid #eef2f7;border-radius:14px;padding:12px;line-height:1.9;color:var(--muted)}
+
+    body{
+      margin:0;
+      padding:18px;
+      font-family:Tajawal,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .header{
+      max-width:920px;
+      margin:0 auto 20px;
+      text-align:center;
+    }
+
+    .header h1{
+      margin:0;
+      color:var(--primary);
+      font-size:2rem;
+      font-weight:900;
+    }
+
+    .header p{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .credit{
+      display:inline-block;
+      margin-top:10px;
+      background:#eef2ff;
+      color:var(--primary);
+      border:1px solid #c7d2fe;
+      padding:8px 14px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.9rem;
+    }
+
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      display:block;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:18px;
+      box-shadow:0 4px 14px rgba(15,23,42,.08);
+      padding:18px;
+      margin-bottom:16px;
+    }
+
+    .card h2{
+      margin:0 0 14px;
+      color:var(--primary);
+      font-size:1.12rem;
+      font-weight:900;
+    }
+
+    label{
+      display:block;
+      margin:10px 0 5px;
+      color:var(--muted);
+      font-weight:800;
+      font-size:.86rem;
+    }
+
+    input,select,textarea,button{
+      width:100%;
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      font-family:inherit;
+      font-size:.95rem;
+      background:#fff;
+      color:var(--text);
+    }
+
+    textarea{
+      min-height:86px;
+      resize:vertical;
+      line-height:1.7;
+    }
+
+    button{
+      border:none;
+      background:var(--primary);
+      color:white;
+      font-weight:900;
+      cursor:pointer;
+      transition:.2s;
+      margin-top:12px;
+    }
+
+    button:hover{
+      background:var(--primary-dark);
+      transform:translateY(-1px);
+    }
+
+    button:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+      transform:none;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .hint{
+      background:var(--orange-bg);
+      border-right:4px solid var(--accent);
+      border-radius:12px;
+      padding:11px;
+      color:#9a3412;
+      line-height:1.8;
+      font-size:.88rem;
+      margin-top:10px;
+    }
+
+    .ok{
+      background:#f0fdf4;
+      border-right-color:var(--green);
+      color:#166534;
+    }
+
+    .danger{
+      background:#fef2f2;
+      border-right-color:var(--red);
+      color:#991b1b;
+    }
+
+    .preview{
+      background:#f8fafc;
+      border:1px solid #eef2f7;
+      border-radius:14px;
+      padding:12px;
+      line-height:1.9;
+      color:var(--muted);
+    }
+
     .preview b{color:var(--text)}
-    .small{font-size:.82rem;color:var(--muted);line-height:1.7}
-    .pill{display:inline-block;background:#eef2ff;color:var(--primary);border:1px solid #c7d2fe;border-radius:999px;padding:4px 10px;font-weight:800;font-size:.78rem;margin:2px}
-    .loader{display:none;margin-top:10px;color:var(--primary);font-weight:800}
-    .progress{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;margin-top:10px;display:none}
-    .progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));transition:.3s}
+
+    .small{
+      font-size:.82rem;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .loader{
+      display:none;
+      margin-top:10px;
+      color:var(--primary);
+      font-weight:800;
+    }
+
+    .progress{
+      height:8px;
+      background:#e2e8f0;
+      border-radius:999px;
+      overflow:hidden;
+      margin-top:10px;
+      display:none;
+    }
+
+    .progress span{
+      display:block;
+      height:100%;
+      width:0;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      transition:.3s;
+    }
+
     .hidden{display:none!important}
-    code{direction:ltr;display:block;white-space:pre-wrap;background:#0f172a;color:#e5e7eb;padding:12px;border-radius:12px;font-size:.8rem;line-height:1.7;max-height:280px;overflow:auto}
-    @media(max-width:900px){.wrap{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+
+    @media(max-width:700px){
+      body{padding:12px}
+      .header h1{font-size:1.55rem}
+      .row{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <h1>موقع رفع محتوى الدروس</h1>
     <div class="credit">منصة عمان أكاديمي | إدارة روابط الشرح والأنشطة والاختبارات</div>
-    <p>اختر الصف والمادة والدرس من نفس بيانات موقع جدول المذاكرة، ثم ارفع ملفًا أو أضف رابطًا ليتم حفظه في Google Drive وGoogle Sheet عبر Apps Script.</p>
+    <p>اختر الصف والمادة والدرس، ثم ارفع ملفًا أو أضف رابطًا ليتم حفظه في Google Drive وتسجيله في Google Sheet.</p>
   </header>
 
   <div class="wrap">
@@ -55,21 +221,27 @@
         <div class="row">
           <div>
             <label for="gradeSelect">الصف</label>
-            <select id="gradeSelect"><option value="">جاري تحميل الصفوف...</option></select>
+            <select id="gradeSelect" onchange="populateSubjects()">
+              <option value="">جاري تحميل الصفوف...</option>
+            </select>
           </div>
           <div>
             <label for="subjectSelect">المادة</label>
-            <select id="subjectSelect"><option value="">اختر الصف أولًا</option></select>
+            <select id="subjectSelect" onchange="populateLessons()">
+              <option value="">اختر الصف أولًا</option>
+            </select>
           </div>
         </div>
 
         <label for="lessonSearch">بحث سريع داخل الدروس</label>
-        <input id="lessonSearch" type="search" placeholder="اكتب جزءًا من عنوان الدرس...">
+        <input id="lessonSearch" type="search" oninput="populateLessons()" placeholder="اكتب جزءًا من عنوان الدرس...">
 
         <label for="lessonSelect">الدرس</label>
-        <select id="lessonSelect"><option value="">اختر المادة أولًا</option></select>
+        <select id="lessonSelect" onchange="updatePreview()">
+          <option value="">اختر المادة أولًا</option>
+        </select>
 
-        <div id="lessonInfo" class="hint">سيتم تحميل الدروس تلقائيًا من ملف index.html في نفس مستودع GitHub.</div>
+        <div id="lessonInfo" class="hint">جاري تحميل الدروس من موقع جدول المذاكرة...</div>
       </section>
 
       <section class="card">
@@ -77,7 +249,7 @@
         <div class="row">
           <div>
             <label for="contentType">نوع المحتوى</label>
-            <select id="contentType">
+            <select id="contentType" onchange="updatePreview()">
               <option value="فيديو">فيديو</option>
               <option value="نشاط">نشاط</option>
               <option value="امتحان إلكتروني">امتحان إلكتروني</option>
@@ -93,7 +265,7 @@
           </div>
           <div>
             <label for="statusSelect">حالة النشر</label>
-            <select id="statusSelect">
+            <select id="statusSelect" onchange="updatePreview()">
               <option value="قيد المراجعة">قيد المراجعة</option>
               <option value="مفعل">مفعل</option>
               <option value="غير مفعل">غير مفعل</option>
@@ -102,22 +274,27 @@
         </div>
 
         <label for="titleInput">عنوان المحتوى</label>
-        <input id="titleInput" type="text" placeholder="مثال: شرح درس العناصر الانتقالية">
+        <input id="titleInput" type="text" oninput="updatePreview()" placeholder="مثال: شرح درس العناصر الانتقالية">
 
         <label for="externalUrl">رابط جاهز اختياري</label>
-        <input id="externalUrl" type="url" placeholder="https://... مثال: رابط يوتيوب أو Google Form أو ملف جاهز">
+        <input id="externalUrl" type="url" oninput="updatePreview()" placeholder="https://... مثال: رابط يوتيوب أو Google Form أو ملف جاهز">
         <div class="small">إذا أضفت رابطًا فقط بدون ملف سيتم تسجيل الرابط في Google Sheet. وإذا رفعت ملفًا سيتم رفعه إلى Google Drive.</div>
 
         <label for="fileInput">رفع ملف اختياري</label>
-        <input id="fileInput" type="file" accept="video/*,image/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip,.rar,.txt">
-        <div class="small">للفيديوهات الكبيرة يفضّل رفعها في Drive أو YouTube ثم وضع الرابط؛ لأن Apps Script مناسب غالبًا للملفات الصغيرة والمتوسطة.</div>
+        <input id="fileInput" type="file" onchange="updatePreview()" accept="video/*,image/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip,.rar,.txt">
+        <div class="small">للفيديوهات الكبيرة يفضّل رفعها في Drive أو YouTube ثم وضع الرابط.</div>
 
         <label for="notesInput">ملاحظات</label>
-        <textarea id="notesInput" placeholder="ملاحظات اختيارية عن المحتوى..."></textarea>
+        <textarea id="notesInput" oninput="updatePreview()" placeholder="ملاحظات اختيارية عن المحتوى..."></textarea>
       </section>
 
       <section class="card">
-        <h2>3) بيانات الرفع</h2>
+        <h2>3) معاينة قبل الرفع</h2>
+        <div id="preview" class="preview">اختر الصف والمادة والدرس لعرض المعاينة هنا.</div>
+      </section>
+
+      <section class="card">
+        <h2>4) بيانات الرفع</h2>
         <div class="row">
           <div>
             <label for="uploaderName">اسم الرافع</label>
@@ -128,46 +305,19 @@
             <input id="uploadToken" type="password" placeholder="الرمز المعتمد للرفع">
           </div>
         </div>
-        <button id="submitBtn" type="button">رفع المحتوى وحفظه</button>
+        <button id="submitBtn" type="button" onclick="submitUpload()">رفع المحتوى وحفظه</button>
         <div class="progress" id="progress"><span id="progressBar"></span></div>
         <div id="loader" class="loader">جاري الرفع والحفظ...</div>
         <div id="message" class="hint hidden"></div>
       </section>
     </main>
-
-    <aside>
-      <section class="card">
-        <h2>معاينة قبل الرفع</h2>
-        <div id="preview" class="preview">اختر الصف والمادة والدرس لعرض المعاينة هنا.</div>
-      </section>
-
-      <section class="card">
-        <h2>إعدادات مهمة</h2>
-        <div class="hint">
-          عدّل في بداية السكريبت داخل هذه الصفحة:
-          <br><b>UPLOAD_WEB_APP_URL</b> = رابط Apps Script Web App
-          <br><b>LESSON_SOURCE_URL</b> = غالبًا يبقى <span class="pill">./index.html</span>
-        </div>
-        <button class="btn-secondary" type="button" onclick="copyAppsScriptCode()">نسخ كود Apps Script المطلوب</button>
-        <div class="small" style="margin-top:8px">ضع الكود في Google Sheet ثم انشره كتطبيق ويب.</div>
-      </section>
-
-      <section class="card">
-        <h2>كود Apps Script</h2>
-        <code id="appsScriptCode"></code>
-      </section>
-    </aside>
   </div>
 
   <script>
     'use strict';
 
-    // ضع رابط Web App بعد نشر Apps Script هنا.
     const UPLOAD_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxmIR4zwx5G6V10MBI7HZA3Kw1dQiG4JJQ08izFG9SYuSv-CDRJQrNATzrmdIc7LnaE/exec';
-
-    // إذا كانت صفحة الرفع upload.html في نفس مستودع موقع الجدول، اتركه كما هو.
-    const LESSON_SOURCE_URL = './index.html';
-
+    const LESSON_SOURCE_URL = 'https://raw.githubusercontent.com/annwr2a2/oman-academy/main/index.html';
     const MAX_FILE_SIZE_MB = 20;
 
     let lessonData = {};
@@ -184,39 +334,39 @@
     }
 
     function showMessage(text, type='info'){
-      const box=$('message');
-      box.className='hint';
-      if(type==='success') box.classList.add('ok');
-      if(type==='error') box.classList.add('danger');
-      box.textContent=text;
+      const box = $('message');
+      box.className = 'hint';
+      if(type === 'success') box.classList.add('ok');
+      if(type === 'error') box.classList.add('danger');
+      box.textContent = text;
       box.classList.remove('hidden');
     }
 
     function setProgress(percent){
-      $('progress').style.display='block';
-      $('progressBar').style.width=`${Math.max(0, Math.min(100, percent))}%`;
+      $('progress').style.display = 'block';
+      $('progressBar').style.width = `${Math.max(0, Math.min(100, percent))}%`;
     }
 
     async function loadLessonData(){
       try{
-        const response = await fetch(LESSON_SOURCE_URL, {cache:'no-store'});
-        if(!response.ok) throw new Error(`تعذر تحميل ${LESSON_SOURCE_URL}`);
+        const response = await fetch(LESSON_SOURCE_URL + '?v=' + Date.now(), {cache:'no-store'});
+        if(!response.ok) throw new Error(`تعذر تحميل بيانات الدروس. كود الاستجابة: ${response.status}`);
         const html = await response.text();
         const objectText = extractObjectLiteral(html, 'lessonData');
         lessonData = Function(`return (${objectText});`)();
         populateGrades();
-        $('lessonInfo').textContent = 'تم تحميل الدروس بنجاح من موقع جدول المذاكرة.';
-        $('lessonInfo').classList.add('ok');
       }catch(error){
         console.error(error);
-        $('gradeSelect').innerHTML='<option value="">تعذر تحميل الصفوف</option>';
-        $('lessonInfo').textContent='تعذر تحميل الدروس. تأكد أن upload.html موجود بجانب index.html أو عدّل LESSON_SOURCE_URL.';
-        $('lessonInfo').classList.add('danger');
+        $('gradeSelect').innerHTML = '<option value="">تعذر تحميل الصفوف</option>';
+        $('subjectSelect').innerHTML = '<option value="">تعذر تحميل المواد</option>';
+        $('lessonSelect').innerHTML = '<option value="">تعذر تحميل الدروس</option>';
+        $('lessonInfo').textContent = 'تعذر تحميل الدروس. تأكد أن مستودع جدول المذاكرة عام وأن رابط LESSON_SOURCE_URL صحيح.';
+        $('lessonInfo').className = 'hint danger';
       }
     }
 
     function extractObjectLiteral(source, variableName){
-      const regex = new RegExp('(?:const|let|var)\\s+' + variableName + '\\s*=');
+      const regex = new RegExp('(?:const|let|var)\s+' + variableName + '\s*=');
       const match = regex.exec(source);
       if(!match) throw new Error(`لم يتم العثور على ${variableName}`);
       const startSearch = match.index + match[0].length;
@@ -226,7 +376,7 @@
       let depth = 0;
       let inString = false;
       let quote = '';
-      for(let i=start;i<source.length;i++){
+      for(let i = start; i < source.length; i++){
         const ch = source[i];
         if(inString){
           if(ch === quote && !isEscaped(source, i)){
@@ -242,30 +392,56 @@
         }
         if(ch === '{') depth++;
         if(ch === '}') depth--;
-        if(depth === 0) return source.slice(start, i+1);
+        if(depth === 0) return source.slice(start, i + 1);
       }
       throw new Error(`لم يتم إغلاق ${variableName}`);
     }
 
     function isEscaped(text, index){
-      let slashCount=0;
-      for(let i=index-1;i>=0 && text[i]==='\\';i--) slashCount++;
+      let slashCount = 0;
+      for(let i = index - 1; i >= 0 && text[i] === '\'; i--) slashCount++;
       return slashCount % 2 === 1;
     }
 
     function populateGrades(){
-      const grades = Object.keys(lessonData).sort((a,b)=>Number(a)-Number(b));
+      const grades = Object.keys(lessonData || {}).sort((a,b) => Number(a) - Number(b));
+      if(!grades.length){
+        $('gradeSelect').innerHTML = '<option value="">لا توجد صفوف</option>';
+        $('lessonInfo').textContent = 'تم الاتصال بالمصدر، لكن لم يتم العثور على صفوف داخل lessonData.';
+        $('lessonInfo').className = 'hint danger';
+        return;
+      }
       $('gradeSelect').innerHTML = '<option value="">-- اختر الصف --</option>' + grades.map(g => `<option value="${escapeHtml(g)}">الصف ${escapeHtml(g)}</option>`).join('');
+      $('lessonInfo').textContent = `تم تحميل ${grades.length} صفوف بنجاح. اختر الصف من القائمة.`;
+      $('lessonInfo').className = 'hint ok';
+      updatePreview();
     }
 
     function populateSubjects(){
       const grade = $('gradeSelect').value;
       $('subjectSelect').innerHTML = '<option value="">-- اختر المادة --</option>';
       $('lessonSelect').innerHTML = '<option value="">اختر المادة أولًا</option>';
+      $('lessonSearch').value = '';
       currentLessons = [];
-      if(!grade || !lessonData[grade]) return updatePreview();
-      const subjects = Object.keys(lessonData[grade]);
+
+      if(!grade || !lessonData[grade]){
+        $('lessonInfo').textContent = 'اختر الصف أولًا، ثم اختر المادة والدرس.';
+        $('lessonInfo').className = 'hint';
+        updatePreview();
+        return;
+      }
+
+      const subjects = Object.keys(lessonData[grade] || {});
+      if(!subjects.length){
+        $('lessonInfo').textContent = `لا توجد مواد محفوظة للصف ${grade}.`;
+        $('lessonInfo').className = 'hint danger';
+        updatePreview();
+        return;
+      }
+
       $('subjectSelect').innerHTML += subjects.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+      $('lessonInfo').textContent = `تم اختيار الصف ${grade}. عدد المواد المتاحة: ${subjects.length}. اختر المادة الآن.`;
+      $('lessonInfo').className = 'hint ok';
       updatePreview();
     }
 
@@ -276,18 +452,22 @@
       currentLessons = (lessonData[grade] && lessonData[grade][subject]) ? lessonData[grade][subject] : [];
       const filtered = currentLessons.filter(lesson => String(lesson).toLowerCase().includes(search));
       $('lessonSelect').innerHTML = '<option value="">-- اختر الدرس --</option>' + filtered.map(l => `<option value="${escapeHtml(l)}">${escapeHtml(l)}</option>`).join('');
-      if(filtered.length === 1) $('lessonSelect').value = filtered[0];
+
+      if(subject){
+        $('lessonInfo').textContent = `تم اختيار ${subject}. عدد الدروس المتاحة: ${currentLessons.length}${search ? `، نتائج البحث: ${filtered.length}` : ''}.`;
+        $('lessonInfo').className = currentLessons.length ? 'hint ok' : 'hint danger';
+      }
       updatePreview();
     }
 
     function updatePreview(){
-      const grade=$('gradeSelect').value || 'لم يحدد';
-      const subject=$('subjectSelect').value || 'لم تحدد';
-      const lesson=$('lessonSelect').value || 'لم يحدد';
-      const type=$('contentType').value;
-      const title=$('titleInput').value || 'لم يكتب العنوان';
-      const file=$('fileInput').files[0];
-      const externalUrl=$('externalUrl').value.trim();
+      const grade = $('gradeSelect').value || 'لم يحدد';
+      const subject = $('subjectSelect').value || 'لم تحدد';
+      const lesson = $('lessonSelect').value || 'لم يحدد';
+      const type = $('contentType').value;
+      const title = $('titleInput').value || 'لم يكتب العنوان';
+      const file = $('fileInput').files[0];
+      const externalUrl = $('externalUrl').value.trim();
       $('preview').innerHTML = `
         <b>الصف:</b> ${escapeHtml(grade)}<br>
         <b>المادة:</b> ${escapeHtml(subject)}<br>
@@ -300,14 +480,13 @@
     }
 
     function validateForm(){
-      if(UPLOAD_WEB_APP_URL.includes('PASTE_')) return 'ضع رابط Apps Script Web App داخل UPLOAD_WEB_APP_URL أولًا.';
       if(!$('gradeSelect').value) return 'اختر الصف.';
       if(!$('subjectSelect').value) return 'اختر المادة.';
       if(!$('lessonSelect').value) return 'اختر الدرس.';
       if(!$('titleInput').value.trim()) return 'اكتب عنوان المحتوى.';
       if(!$('uploadToken').value.trim()) return 'اكتب رمز الرفع.';
-      const file=$('fileInput').files[0];
-      const externalUrl=$('externalUrl').value.trim();
+      const file = $('fileInput').files[0];
+      const externalUrl = $('externalUrl').value.trim();
       if(!file && !externalUrl) return 'ارفع ملفًا أو ضع رابطًا جاهزًا.';
       if(file && file.size > MAX_FILE_SIZE_MB * 1024 * 1024) return `حجم الملف أكبر من ${MAX_FILE_SIZE_MB}MB. استخدم رابط Drive أو YouTube بدلًا من الرفع المباشر.`;
       return '';
@@ -318,8 +497,7 @@
         const reader = new FileReader();
         reader.onload = () => {
           const result = String(reader.result || '');
-          const base64 = result.includes(',') ? result.split(',')[1] : result;
-          resolve(base64);
+          resolve(result.includes(',') ? result.split(',')[1] : result);
         };
         reader.onerror = reject;
         reader.readAsDataURL(file);
@@ -333,18 +511,18 @@
         return;
       }
 
-      const submitBtn=$('submitBtn');
-      submitBtn.disabled=true;
-      $('loader').style.display='block';
+      const submitBtn = $('submitBtn');
+      submitBtn.disabled = true;
+      $('loader').style.display = 'block';
       setProgress(15);
 
       try{
-        const file=$('fileInput').files[0];
-        let fileBase64='', fileName='', mimeType='', fileSize=0;
+        const file = $('fileInput').files[0];
+        let fileBase64 = '', fileName = '', mimeType = '', fileSize = 0;
         if(file){
-          fileName=file.name;
-          mimeType=file.type || 'application/octet-stream';
-          fileSize=file.size;
+          fileName = file.name;
+          mimeType = file.type || 'application/octet-stream';
+          fileSize = file.size;
           setProgress(35);
           fileBase64 = await fileToBase64(file);
           setProgress(65);
@@ -371,160 +549,33 @@
         const response = await fetch(UPLOAD_WEB_APP_URL, {
           method:'POST',
           body: JSON.stringify(payload),
-          headers: {'Content-Type':'text/plain;charset=utf-8'}
+          headers:{'Content-Type':'text/plain;charset=utf-8'}
         });
 
         setProgress(90);
         const text = await response.text();
         let result;
-        try{ result = JSON.parse(text); }catch(_){ throw new Error(text || 'استجابة غير مفهومة من الخادم.'); }
+        try{ result = JSON.parse(text); }
+        catch(_){ throw new Error(text || 'استجابة غير مفهومة من الخادم.'); }
         if(!result.ok) throw new Error(result.message || 'تعذر حفظ المحتوى.');
 
         setProgress(100);
         showMessage(`تم حفظ المحتوى بنجاح. الرابط: ${result.url || payload.externalUrl}`, 'success');
-        $('fileInput').value='';
-        $('externalUrl').value='';
-        $('titleInput').value='';
-        $('notesInput').value='';
+        $('fileInput').value = '';
+        $('externalUrl').value = '';
+        $('titleInput').value = '';
+        $('notesInput').value = '';
         updatePreview();
       }catch(error){
         console.error(error);
         showMessage(error.message || 'حدث خطأ أثناء الرفع.', 'error');
       }finally{
-        submitBtn.disabled=false;
-        $('loader').style.display='none';
+        submitBtn.disabled = false;
+        $('loader').style.display = 'none';
       }
     }
 
-    const APPS_SCRIPT_CODE = `const CONFIG = {
-  DRIVE_FOLDER_ID: 'PUT_DRIVE_FOLDER_ID_HERE',
-  UPLOAD_TOKEN: 'PUT_SECRET_UPLOAD_TOKEN_HERE',
-  SHEET_RESOURCES: 'روابط_المحتوى'
-};
-
-function doPost(e) {
-  try {
-    const data = JSON.parse(e.postData.contents || '{}');
-    if (CONFIG.UPLOAD_TOKEN && data.token !== CONFIG.UPLOAD_TOKEN) {
-      return jsonOutput_({ ok: false, message: 'رمز الرفع غير صحيح.' });
-    }
-
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const sheet = ensureResourcesSheet_(ss);
-    let finalUrl = String(data.externalUrl || '').trim();
-    let fileId = '';
-
-    if (data.fileBase64 && data.fileName) {
-      const folder = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
-      const bytes = Utilities.base64Decode(data.fileBase64);
-      const safeName = sanitizeFileName_(data.fileName);
-      const blob = Utilities.newBlob(bytes, data.mimeType || 'application/octet-stream', safeName);
-      const file = folder.createFile(blob);
-      file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-      fileId = file.getId();
-      finalUrl = file.getUrl();
-    }
-
-    if (!finalUrl) {
-      return jsonOutput_({ ok: false, message: 'لا يوجد ملف أو رابط للحفظ.' });
-    }
-
-    const grade = String(data.grade || '').trim();
-    const subject = String(data.subject || '').trim();
-    const lesson = String(data.lesson || '').trim();
-    const key = data.key || grade + '||' + subject + '||' + lesson;
-
-    sheet.appendRow([
-      new Date(),
-      grade,
-      subject,
-      lesson,
-      String(data.type || '').trim(),
-      String(data.title || '').trim(),
-      finalUrl,
-      String(data.status || 'قيد المراجعة').trim(),
-      String(data.notes || '').trim(),
-      key,
-      String(data.uploader || '').trim(),
-      fileId,
-      String(data.fileName || '').trim(),
-      Number(data.fileSize || 0)
-    ]);
-
-    return jsonOutput_({ ok: true, url: finalUrl, fileId: fileId });
-  } catch (error) {
-    return jsonOutput_({ ok: false, message: error.message });
-  }
-}
-
-function doGet(e) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ensureResourcesSheet_(ss);
-  const values = sheet.getDataRange().getValues();
-  const rows = values.slice(1).map(row => ({
-    date: row[0],
-    grade: String(row[1] || '').trim(),
-    subject: String(row[2] || '').trim(),
-    lesson: String(row[3] || '').trim(),
-    type: String(row[4] || '').trim(),
-    title: String(row[5] || '').trim(),
-    url: String(row[6] || '').trim(),
-    status: String(row[7] || '').trim(),
-    notes: String(row[8] || '').trim(),
-    key: String(row[9] || '').trim()
-  })).filter(item => {
-    if (!item.grade || !item.subject || !item.lesson || !item.url) return false;
-    if (item.status !== 'مفعل') return false;
-    if (e.parameter.grade && item.grade !== String(e.parameter.grade).trim()) return false;
-    if (e.parameter.subject && item.subject !== String(e.parameter.subject).trim()) return false;
-    if (e.parameter.lesson && item.lesson !== String(e.parameter.lesson).trim()) return false;
-    return true;
-  });
-  return jsonOutput_(rows);
-}
-
-function ensureResourcesSheet_(ss) {
-  let sheet = ss.getSheetByName(CONFIG.SHEET_RESOURCES);
-  if (!sheet) {
-    sheet = ss.insertSheet(CONFIG.SHEET_RESOURCES);
-    sheet.appendRow([
-      'التاريخ','الصف','المادة','الدرس','نوع المحتوى','عنوان المحتوى','رابط المحتوى','الحالة','ملاحظات','مفتاح الربط','اسم الرافع','File ID','اسم الملف','حجم الملف'
-    ]);
-  }
-  return sheet;
-}
-
-function sanitizeFileName_(name) {
-  return String(name || 'file').replace(/[\\\\/:*?"<>|]/g, '-').slice(0, 180);
-}
-
-function jsonOutput_(obj) {
-  return ContentService
-    .createTextOutput(JSON.stringify(obj))
-    .setMimeType(ContentService.MimeType.JSON);
-}`;
-
-    function copyAppsScriptCode(){
-      navigator.clipboard.writeText(APPS_SCRIPT_CODE).then(()=>{
-        showMessage('تم نسخ كود Apps Script. ضعه في Google Sheet ثم انشره كتطبيق ويب.', 'success');
-      }).catch(()=>{
-        showMessage('تعذر النسخ التلقائي. انسخ الكود من المربع يدويًا.', 'error');
-      });
-    }
-
-    function bindEvents(){
-      $('gradeSelect').addEventListener('change', populateSubjects);
-      $('subjectSelect').addEventListener('change', populateLessons);
-      $('lessonSearch').addEventListener('input', populateLessons);
-      ['lessonSelect','contentType','titleInput','externalUrl','fileInput','notesInput','statusSelect'].forEach(id => $(id).addEventListener('input', updatePreview));
-      $('submitBtn').addEventListener('click', submitUpload);
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      $('appsScriptCode').textContent = APPS_SCRIPT_CODE;
-      bindEvents();
-      loadLessonData();
-    });
+    window.addEventListener('DOMContentLoaded', loadLessonData);
   </script>
 </body>
 </html>
