@@ -11,21 +11,21 @@
             background-color: #f8f9fa;
             color: #111111;
             margin: 0;
-            padding: 10px; 
+            padding: 10px; /* تقليل الحواف للهواتف */
             font-weight: bold;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
             background-color: #ffffff;
-            padding: 15px; 
+            padding: 15px; /* متجاوب */
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             border: 3px solid #1a73e8;
             box-sizing: border-box;
         }
         h1, h2, h3, p, span, td, th, button, label {
-            font-weight: 900 !important; 
+            font-weight: 900 !important; /* ضمان الخط العريض جداً لجميع النصوص */
         }
         h1 {
             color: #1a73e8;
@@ -33,7 +33,7 @@
             border-bottom: 4px solid #1a73e8;
             padding-bottom: 15px;
             margin-top: 0;
-            font-size: 24px; 
+            font-size: 24px; /* حجم أنسب للهواتف ويزداد في الشاشات الأكبر */
         }
         .audio-control {
             text-align: center;
@@ -58,6 +58,7 @@
         .btn-audio:hover {
             background-color: #3c4043;
         }
+        /* قسم المحاكاة والمرئيات */
         .simulation-container {
             display: flex;
             flex-direction: column;
@@ -83,14 +84,14 @@
             background: #000000;
             border-radius: 6px;
             border: 3px solid #202124;
-            width: 100%; 
+            width: 100%; /* جعل الكانفاس مرن وعرضه 100% من الحاوية */
             height: auto;
             display: block;
         }
         .controls-panel {
             margin-top: 15px;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column; /* عمودي افتراضياً للهواتف */
             gap: 15px;
             align-items: center;
             width: 100%;
@@ -99,7 +100,7 @@
         }
         .slider-group {
             display: flex;
-            flex-direction: column; 
+            flex-direction: column; /* عمودي للهواتف لسهولة اللمس */
             align-items: center;
             gap: 10px;
             width: 100%;
@@ -108,11 +109,12 @@
             width: 100%;
             max-width: 300px;
             cursor: pointer;
-            height: 10px; 
+            height: 10px; /* زيادة السمك لسهولة السحب باللمس */
         }
+        /* بطاقات المعطيات والجدول */
         .cards-grid {
             display: grid;
-            grid-template-columns: 1fr; 
+            grid-template-columns: 1fr; /* عمود واحد للهواتف */
             gap: 20px;
             margin-bottom: 25px;
         }
@@ -130,7 +132,7 @@
         }
         .table-responsive {
             width: 100%;
-            overflow-x: auto; 
+            overflow-x: auto; /* السماح بالتمرير الأفقي للجدول إذا صغرت الشاشة جداً */
         }
         table {
             width: 100%;
@@ -150,6 +152,7 @@
         td {
             background-color: #ffffff;
         }
+        /* قسم التحدي والتقييم */
         .quiz-section {
             background: #fef7e0;
             border: 3px solid #f4b400;
@@ -174,7 +177,7 @@
         }
         .options-container {
             display: grid;
-            grid-template-columns: 1fr; 
+            grid-template-columns: 1fr; /* عمود واحد للهواتف لعدم تداخل النصوص العريضة */
             gap: 12px;
         }
         .option-btn {
@@ -206,6 +209,7 @@
         .correct-feedback { color: #137333; }
         .wrong-feedback { color: #c5221f; }
         
+        /* صندوق خطوات الحل التفصيلي */
         .solution-box {
             margin-top: 20px;
             background-color: #fce8e6;
@@ -222,6 +226,7 @@
             margin-top: 0;
             font-size: 16px;
         }
+
         .action-container {
             text-align: center;
             margin-top: 25px;
@@ -240,6 +245,7 @@
         }
         .btn-refresh:hover { background-color: #0f5b29; }
         
+        /* حقوق العمل السفلى */
         footer {
             margin-top: 40px;
             text-align: center;
@@ -252,6 +258,7 @@
             line-height: 1.6;
         }
 
+        /* 📱 شاشات التابلت والأجهزة المتوسطة (أكبر من 600 بكسل) */
         @media (min-width: 600px) {
             body { padding: 20px; }
             .container { padding: 30px; }
@@ -304,10 +311,10 @@
     <div class="cards-grid">
         <div class="card">
             <h3>🔬 الثوابت والقوانين الفيزيائية بالدرس</h3>
-            <p>• عدد أفوجادرو ($N_A$) = $6.022 \times 10^{23}$ جزيء/مول</p>
-            <p>• الكتلة المولية لـ $CO_2$ = 44.0 جرام/مول</p>
-            <p>• قانون عدد المولات بدلالة الجسيمات: $n = \frac{N}{N_A}$</p>
-            <p>• قانون عدد المولات بدلالة الكتلة: $n = \frac{m}{M}$</p>
+            <p>• عدد أفوجادرو (N_A) = 6.022 × 10²³ جزيء/مول</p>
+            <p>• الكتلة المولية لـ CO₂ = 44.0 جرام/مول</p>
+            <p>• قانون عدد المولات بدلالة الجسيمات: n = N / N_A</p>
+            <p>• قانون عدد المولات بدلالة الكتلة: n = m / M</p>
         </div>
         <div class="card">
             <h3>📊 الحسابات الديناميكية بناءً على المحاكاة</h3>
@@ -357,6 +364,7 @@
 </div>
 
 <script>
+    // إعدادات محاكاة الـ Canvas المتجاوبة
     const canvas = document.getElementById('gasCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -364,6 +372,7 @@
 
     class Particle {
         constructor() {
+            // توليد إحداثيات تعتمد على الأبعاد الفعلية الحالية للكانفاس
             this.x = Math.random() * (canvas.width - 20) + 10;
             this.y = Math.random() * (canvas.height - 20) + 10;
             this.vx = (Math.random() - 0.5) * 4;
@@ -374,6 +383,7 @@
             this.x += this.vx;
             this.y += this.vy;
             
+            // الارتداد من الحواف بدقة
             if(this.x - this.radius < 0) { this.x = this.radius; this.vx *= -1; }
             if(this.x + this.radius > canvas.width) { this.x = canvas.width - this.radius; this.vx *= -1; }
             if(this.y - this.radius < 0) { this.y = this.radius; this.vy *= -1; }
@@ -420,36 +430,25 @@
         document.getElementById('td-particles').innerText = countText + " جزيء";
     }
 
+    // تهيئة التشغيل الأول للمحاكاة
     initSimulation(1);
     animate();
 
     function speakLesson() {
         window.speechSynthesis.cancel(); 
-        let text = "مرحباً بكم يا شباب في صف الفيزياء. معكم الأستاذ أنور البلوشي. درسُنا اليوم هو كميةُ المادةِ والمول. تذكروا دائماً أن المول الواحد من أي مادة، يحتوي على نفسِ العددِ من الجسيماتِ، وهو ما يُعرفُ بعددِ أفوجادرو.";
+        let text = "مرحباً بكم يا شباب في صف الفيزياء. ... معكم الأستاذ أنور البلوشي. ... درسُنا اليوم هو كميةُ المادةِ والمول. ... تذكروا دائماً أن المول الواحد من أي مادة، يحتوي على نفسِ العددِ من الجسيماتِ، وهو ما يُعرفُ بعددِ أفوجادرو، ويساوي ستة فاصلة صفر اثنين وعشرين، مضروباً في عشرةٍ أس ثلاثةٍ وعشرين. ... لاحظوا في شاشةِ المحاكاةِ أمامكم، كيف تزدادُ كتلةُ الغازِ وعددُ جزيئاته، كلما أضفنا كمياتِ مولاتٍ أكبر. ... والآن حان دورُكم لتجربةِ التحدي في الأسفل.";
         let utterance = new SpeechSynthesisUtterance(text);
-        
-        // تعديل متقدم لضمان العثور على صوت عربي بالهواتف والكمبيوترات
-        let voices = window.speechSynthesis.getVoices();
-        let arabicVoice = voices.find(v => v.lang.includes('ar'));
-        if(arabicVoice) utterance.voice = arabicVoice;
-
-        utterance.lang = 'ar';
+        utterance.lang = 'ar-OM';
         utterance.rate = 0.85;     
-        utterance.pitch = 1.0;     
+        utterance.pitch = 0.9;     
         window.speechSynthesis.speak(utterance);
-    }
-
-    // تفعيل المحرك الصوتي بمجرد تصفح الصفحة لتفادي حظر الأنظمة الذكية
-    window.speechSynthesis.getVoices();
-    if (window.speechSynthesis.onvoiceschanged !== undefined) {
-        window.speechSynthesis.onvoiceschanged = window.speechSynthesis.getVoices;
     }
 
     function playAudioFeedback(isCorrect) {
         window.speechSynthesis.cancel(); 
         if (isCorrect) {
             let ut = new SpeechSynthesisUtterance("برافو إجابة صحيحة");
-            ut.lang = 'ar';
+            ut.lang = 'ar-EG';
             window.speechSynthesis.speak(ut);
             
             let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -468,8 +467,8 @@
                 }, i * 40);
             }
         } else {
-            let ut = new SpeechSynthesisUtterance("حاول من جديد يا بني، ركز في خطوات الحل");
-            ut.lang = 'ar';
+            let ut = new SpeechSynthesisUtterance("حاول من جديد يا بني، ركز في خطوات الحل الموضحة أمامك");
+            ut.lang = 'ar-EG';
             window.speechSynthesis.speak(ut);
         }
     }
@@ -536,7 +535,7 @@
                 <strong>الخطوة 1: حساب الكتلة المولية (M) للمركب (${comp.formula}):</strong><br>
                 M = ${comp.desc} = <strong>${M} جرام/مول</strong>.<br><br>
                 <strong>الخطوة 2: حساب الكتلة الكلية (m):</strong><br>
-                m = عدد المولات (n) × : الكتلة المولية (M)<br>
+                m = عدد المولات (n) × الكتلة المولية (M)<br>
                 m = ${randomMoles} × ${M} = <strong>${totalMass} جرام</strong>.
             `;
         }
